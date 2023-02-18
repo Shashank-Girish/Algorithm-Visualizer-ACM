@@ -1,6 +1,6 @@
 function bubbleSort(ar) 
 { 
-    let i, j, temp; 
+    let i, j, keys; 
     for (i = 0; i < ar.length; i++)
     { 
           
@@ -8,9 +8,9 @@ function bubbleSort(ar)
         {
             if(ar[j] > ar[j+1])
             {
-                temp = ar[j];
+                keys = ar[j];
                 ar[j] = ar[j+1];
-                ar[j+1] = temp;
+                ar[j+1] = keys;
             }
         }
     } 
