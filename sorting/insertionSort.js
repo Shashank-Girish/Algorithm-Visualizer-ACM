@@ -1,7 +1,7 @@
 function insertionSort(ar) 
 { 
     let i, j, keys; 
-    for (i = 1; i < n; i++)
+    for (i = 1; i < ar.length; i++)
     { 
         keys = ar[i]; 
         j = i - 1; 
