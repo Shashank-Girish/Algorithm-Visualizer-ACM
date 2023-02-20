@@ -6,10 +6,10 @@ class Node {
     }
   }
 
-function inOrder(root){
+function postOrder(root){
     if (root!==null){
-        inOrder(root.left);
-        console.log(root.data);
-        inOrder(root.right);
+        postOrder(root.left);
+        postOrder(root.right);
+        onsole.log(root.data);
     }
 }

@@ -8,9 +8,8 @@ class Node {
 
 function preOrder(root){
     if (root!==null){
-        console.log(root.data)
-        preOrder(root.left)
-        
-        preOrder(root.right)
+        console.log(root.data);
+        preOrder(root.left);
+        preOrder(root.right);
     }
 }
