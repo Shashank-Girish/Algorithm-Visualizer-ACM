@@ -1,6 +1,7 @@
 function BFS(graph, node){
     var visited = new Array(graph.length).fill(false);
     var queue = [node];
+    //image- "$node
 
     while(queue.length){
         var current = queue.shift();
