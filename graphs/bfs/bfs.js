@@ -6,7 +6,7 @@ async function BFS(graph, node){
     var queue = [node];
     document.getElementById(`white${node}`).style.display= 'none';
     document.getElementById(`grey${node}`).style.display='block';
-    await sleep(2000);
+    await sleep(1000);
 
     while(queue.length){
         var current = queue.shift();
