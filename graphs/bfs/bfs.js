@@ -31,10 +31,3 @@ async function BFS(graph, node){
     }
 }
 
-// var graph = [ [false, true, true, false, false],
-//           [true, false, true, true, false],
-//           [true, true, false, false, false],
-//           [false, true, false, false, false],
-//           [false, false, false, false, false] ];
-
-// BFS(graph, 4 );
