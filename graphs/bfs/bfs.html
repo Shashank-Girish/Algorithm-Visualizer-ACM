@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #white0{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left:100px;
+        }
+        #white1{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:190px;
+            
+            
+        }
+        #white2{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left: 190px;
+            
+        }
+        #white3{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left:10px;
+            
+            
+        }
+        #white4{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:10px;
+            
+        }
+        #grey0{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left:100px;
+            display: none;
+        }
+        #grey1{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:190px;
+            display: none;
+            
+            
+        }
+        #grey2{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left: 190px;
+            display: none;
+            
+        }
+        #grey3{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left:10px;
+            display: none;
+            
+        }
+        #grey4{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:10px;
+            display: none;
+            
+        }
+        #black0{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left:100px;
+            display: none;
+        }
+        #black1{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:190px;
+            display: none;
+            
+            
+        }
+        #black2{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left: 190px;
+            display: none;
+            
+        }
+        #black3{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 350px;
+            left:10px;
+            display: none;
+            
+        }
+        #black4{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 150px;
+            left:10px;
+            display: none;
+            
+        }
+
+        #arrow01{
+
+            width: 50px;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left:150px; 
+        }
+
+        #arrow12{
+
+            height: 150px;
+            position: absolute;
+            top: 200px;
+            left:210px; 
+        }
+
+        #arrow23{
+
+            width: 130px;
+            position: absolute;
+            top: 370px;
+            left:60px; 
+        }
+
+        #arrow34{
+
+            height:150px;
+            position: absolute;
+            top: 200px;
+            left:30px; 
+        }
+
+        #arrow24{
+
+            width: 145px;
+            position: absolute;
+            top: 180px;
+            left:60px; 
+        }
+
+        #arrow02{
+            height: 275px;
+            position: absolute;
+            top: 60px;
+            left:120px; 
+        }
+
+
+
+        .button{
+            height: 30px;
+            width: 200px;
+            
+        }
+        
+    </style>
+    <title>Breadth first search</title>
+</head>
+<body>
+    
+    <img src="w0.png" alt="0_untraversed" id="white0">
+    <img src="w1.png" alt="1_untraversed" id="white1">
+    <img src="w2.png" alt="2_untraversed" id="white2">
+    <img src="w3.png" alt="3_untraversed" id="white3">
+    <img src="w4.png" alt="4_untraversed" id="white4">
+    <img src="g0.png" alt="0_queued" id="grey0">
+    <img src="g1.png" alt="1_queued" id="grey1">
+    <img src="g2.png" alt="2_queued" id="grey2">
+    <img src="g3.png" alt="3_queued" id="grey3">
+    <img src="g4.png" alt="4_queued" id="grey4">
+    <img src="b0.png" alt="0_traversed" id="black0">
+    <img src="b1.png" alt="1_traversed" id="black1">
+    <img src="b2.png" alt="2_traversed" id="black2">
+    <img src="b3.png" alt="3_traversed" id="black3">
+    <img src="b4.png" alt="4_traversed" id="black4">
+
+    <img src="01.png" alt="0_to_1" id="arrow01">
+    <img src="12.png" alt="1_to_2" id="arrow12">
+    <img src="12.png" alt="1_to_2" id="arrow12">
+    <img src="23.png" alt="2_to_3" id="arrow23">
+    <img src="34.png" alt="3_to_4" id="arrow34">
+    <img src="24.png" alt="2_to_4" id="arrow24">
+    <img src="02.png" alt="0_to_2" id="arrow02">
+
+    <button value="Run" onclick="BFS([  
+    [0, 1, 1, 0, 0],
+    [0, 0, 1, 0, 0],
+    [0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 1],
+    [0, 0, 0, 0, 0]
+  ], 0)"class="btn"></button>
+    <script src="bfs.js"></script>
+</body>
+</html>
