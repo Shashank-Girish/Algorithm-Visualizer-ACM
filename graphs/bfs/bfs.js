@@ -16,7 +16,7 @@ async function BFS(graph, node){
             console.log(current);
             document.getElementById(`grey${current}`).style.display='none';
             document.getElementById(`black${current}`).style.display='block';
-            await sleep(2000);
+            await sleep(1000);
             visited[current] = true;
 
             for(var i = 0; i < graph.length; i++){
@@ -24,10 +24,41 @@ async function BFS(graph, node){
                     queue.push(i);
                     document.getElementById(`white${i}`).style.display='none';
                     document.getElementById(`grey${i}`).style.display='block';
-                    await sleep(2000);
+                    await sleep(1000);
                 }
             }
         }
     }
 }
 
+function showGraph(){
+    for(var i=0;i<5;i++){
+      for(var j=0;j<5;j++){
+        if(i!=j){
+          if(document.getElementById(`${i}${j}`).checked){
+            document.getElementById(`arrow${i}${j}`).style.display='block';
+          }
+        }
+      }
+    }
+  }
+  
+  function getGraph(){
+    graph=[
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0],
+      [0,0,0,0,0]
+    ]
+    for(var i=0;i<5;i++){
+      for(var j=0;j<5;j++){
+        if(i!=j){
+          if(document.getElementById(`${i}${j}`).checked){
+            graph[i][j]=1;
+          }
+        }
+      }
+    }
+    return graph;
+  }
