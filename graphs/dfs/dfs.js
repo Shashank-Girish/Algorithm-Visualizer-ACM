@@ -30,3 +30,15 @@ async function DFS(graph, node) {
     }
   }
 }
+
+function showGraph(){
+  for(var i=0;i<5;i++){
+    for(var j=0;j<5;j++){
+      if(i!=j){
+        if(document.getElementById(`${i}${j}`).checked){
+          document.getElementById(`arrow${i}${j}`).style.display='block';
+        }
+      }
+    }
+  }
+}
