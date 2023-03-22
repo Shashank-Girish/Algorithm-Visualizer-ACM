@@ -42,3 +42,23 @@ function showGraph(){
     }
   }
 }
+
+function getGraph(){
+  graph=[
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0],
+    [0,0,0,0,0]
+  ]
+  for(var i=0;i<5;i++){
+    for(var j=0;j<5;j++){
+      if(i!=j){
+        if(document.getElementById(`${i}${j}`).checked){
+          graph[i][j]=1;
+        }
+      }
+    }
+  }
+  return graph;
+}
