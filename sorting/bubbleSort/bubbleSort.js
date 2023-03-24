@@ -49,7 +49,7 @@ async function bubbleSort(ar)
         }
 
         var cell = tbl.rows[0].cells[j]; 
-        cell.setAttribute("bgcolor","green");
+        cell.setAttribute("bgcolor","light-green");
     }
     var cell = tbl.rows[0].cells[0]; 
     cell.setAttribute("bgcolor","green");
