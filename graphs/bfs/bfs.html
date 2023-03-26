@@ -1,165 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/style.css">
-    <title>Breadth first search</title>
-</head>
-<body>
-    
-    <div class="row">
-        <div class="column">
-        <img src="../assets/w0.png" alt="0_untraversed" id="white0">
-        <img src="../assets/w1.png" alt="1_untraversed" id="white1">
-        <img src="../assets/w2.png" alt="2_untraversed" id="white2">
-        <img src="../assets/w3.png" alt="3_untraversed" id="white3">
-        <img src="../assets/w4.png" alt="4_untraversed" id="white4">
-        <img src="../assets/g0.png" alt="0_queued" id="grey0">
-        <img src="../assets/g1.png" alt="1_queued" id="grey1">
-        <img src="../assets/g2.png" alt="2_queued" id="grey2">
-        <img src="../assets/g3.png" alt="3_queued" id="grey3">
-        <img src="../assets/g4.png" alt="4_queued" id="grey4">
-        <img src="../assets/b0.png" alt="0_traversed" id="black0">
-        <img src="../assets/b1.png" alt="1_traversed" id="black1">
-        <img src="../assets/b2.png" alt="2_traversed" id="black2">
-        <img src="../assets/b3.png" alt="3_traversed" id="black3">
-        <img src="../assets/b4.png" alt="4_traversed" id="black4">
-    
-        <img src="../assets/01.png" alt="0_to_1" id="arrow01">
-        <img src="../assets/02.png" alt="0_to_2" id="arrow02">
-        <img src="../assets/03.png" alt="0_to_3" id="arrow03">
-        <img src="../assets/04.png" alt="0_to_4" id="arrow04">
-        <img src="../assets/10.png" alt="1_to_0" id="arrow10">
-        <img src="../assets/12.png" alt="1_to_2" id="arrow12">
-        <img src="../assets/13.png" alt="1_to_3" id="arrow13">
-        <img src="../assets/14.png" alt="1_to_4" id="arrow14">
-        <img src="../assets/20.png" alt="2_to_0" id="arrow20">
-        <img src="../assets/21.png" alt="2_to_1" id="arrow21">
-        <img src="../assets/23.png" alt="2_to_3" id="arrow23">
-        <img src="../assets/24.png" alt="2_to_4" id="arrow24">
-        <img src="../assets/30.png" alt="3_to_0" id="arrow30">
-        <img src="../assets/31.png" alt="3_to_1" id="arrow31">
-        <img src="../assets/32.png" alt="3_to_2" id="arrow32">
-        <img src="../assets/34.png" alt="3_to_4" id="arrow34">
-        <img src="../assets/40.png" alt="4_to_0" id="arrow40">
-        <img src="../assets/41.png" alt="4_to_1" id="arrow41">
-        <img src="../assets/42.png" alt="4_to_2" id="arrow42">
-        <img src="../assets/43.png" alt="4_to_3" id="arrow43">
-       
-        </div>
-        <div class="column">
-        <h1>Breath first search</h1>
-        <p>Click on the checkboxes to select or deselect them:</p>
-        
-        <h2>Node 0</h2>
-        <form>
-          <label>
-            <input type="checkbox" name="option1" value=1 id="01">
-            Node 1
-          </label><br>
-          <label>
-            <input type="checkbox" name="option2" value=1 id="02">
-            Node 2
-          </label><br>
-          <label>
-            <input type="checkbox" name="option3" value=1 id="03">
-            Node 3
-          </label><br>
-        <label>
-            <input type="checkbox" name="option4" value=1 id="04">
-                Node 4
-        </label><br>
-        </form>
-    
-        <h2>Node 1</h2>
-        <form>
-          <label>
-            <input type="checkbox" name="option5" value=1 id="10">
-            Node 0
-          </label><br>
-          <label>
-            <input type="checkbox" name="option6" value=1 id="12">
-            Node 2
-          </label><br>
-          <label>
-            <input type="checkbox" name="option7" value=1 id="13">
-            Node 3
-          </label><br>
-        <label>
-            <input type="checkbox" name="option8" value=1 id="14">
-                Node 4
-        </label><br>
-        </form>
-    
-        <h2>Node 2</h2>
-        <form>
-          <label>
-            <input type="checkbox" name="option9" value=1 id="20">
-            Node 0
-          </label><br>
-          <label>
-            <input type="checkbox" name="option10" value=1 id="21">
-            Node 1
-          </label><br>
-          <label>
-            <input type="checkbox" name="option11" value=1 id="23">
-            Node 3
-          </label><br>
-        <label>
-            <input type="checkbox" name="option12" value=1 id="24">
-                Node 4
-        </label><br>
-        </form>
-    
-        <h2>Node 3</h2>
-        <form>
-          <label>
-            <input type="checkbox" name="option13" value=1 id="30">
-            Node 0
-          </label><br>
-          <label>
-            <input type="checkbox" name="option14" value=1 id="31">
-            Node 1
-          </label><br>
-          <label>
-            <input type="checkbox" name="option15" value=1 id="32">
-            Node 2
-          </label><br>
-        <label>
-            <input type="checkbox" name="option16" value=1 id="34">
-                Node 4
-        </label><br>
-        </form>
-    
-        <h2>Node 4</h2>
-        <form>
-          <label>
-            <input type="checkbox" name="option17" value=1 id="40">
-            Node 0
-          </label><br>
-          <label>
-            <input type="checkbox" name="option18" value=1 id="41">
-            Node 1
-          </label><br>
-          <label>
-            <input type="checkbox" name="option19" value=1 id="42">
-            Node 2
-          </label><br>
-        <label>
-            <input type="checkbox" name="option20" value=1 id="43">
-                Node 3
-        </label><br>
-        </form>
-    
-        <button type="Button" onclick="showGraph()">Confirm graph</button>
-        <button type="Button" onclick="BFS(getGraph(),0)">Run BFS</button>
-        </div>
-        
-    "
-        
-        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../style/style.css">
+        <title>Breath First Search</title>
+    </head>
+    <body>
+      <div id="main">
+        <div class="row">
+          <div class="algo-container">
+            <div class="column">
+                <img src="../assets/w0.png" alt="0_untraversed" id="white0">
+                <img src="../assets/w1.png" alt="1_untraversed" id="white1">
+                <img src="../assets/w2.png" alt="2_untraversed" id="white2">
+                <img src="../assets/w3.png" alt="3_untraversed" id="white3">
+                <img src="../assets/w4.png" alt="4_untraversed" id="white4">
+                <img src="../assets/g0.png" alt="0_queued" id="grey0">
+                <img src="../assets/g1.png" alt="1_queued" id="grey1">
+                <img src="../assets/g2.png" alt="2_queued" id="grey2">
+                <img src="../assets/g3.png" alt="3_queued" id="grey3">
+                <img src="../assets/g4.png" alt="4_queued" id="grey4">
+                <img src="../assets/b0.png" alt="0_traversed" id="black0">
+                <img src="../assets/b1.png" alt="1_traversed" id="black1">
+                <img src="../assets/b2.png" alt="2_traversed" id="black2">
+                <img src="../assets/b3.png" alt="3_traversed" id="black3">
+                <img src="../assets/b4.png" alt="4_traversed" id="black4">
+
+                <img src="../assets/01.png" alt="0_to_1" id="arrow01">
+                <img src="../assets/02.png" alt="0_to_2" id="arrow02">
+                <img src="../assets/03.png" alt="0_to_3" id="arrow03">
+                <img src="../assets/04.png" alt="0_to_4" id="arrow04">
+                <img src="../assets/10.png" alt="1_to_0" id="arrow10">
+                <img src="../assets/12.png" alt="1_to_2" id="arrow12">
+                <img src="../assets/13.png" alt="1_to_3" id="arrow13">
+                <img src="../assets/14.png" alt="1_to_4" id="arrow14">
+                <img src="../assets/20.png" alt="2_to_0" id="arrow20">
+                <img src="../assets/21.png" alt="2_to_1" id="arrow21">
+                <img src="../assets/23.png" alt="2_to_3" id="arrow23">
+                <img src="../assets/24.png" alt="2_to_4" id="arrow24">
+                <img src="../assets/30.png" alt="3_to_0" id="arrow30">
+                <img src="../assets/31.png" alt="3_to_1" id="arrow31">
+                <img src="../assets/32.png" alt="3_to_2" id="arrow32">
+                <img src="../assets/34.png" alt="3_to_4" id="arrow34">
+                <img src="../assets/40.png" alt="4_to_0" id="arrow40">
+                <img src="../assets/41.png" alt="4_to_1" id="arrow41">
+                <img src="../assets/42.png" alt="4_to_2" id="arrow42">
+                <img src="../assets/43.png" alt="4_to_3" id="arrow43">
+            </div>
+          </div>
+          <div class="algo-container">
+            <div class="column">
+              <div id="title"><h1>Breath
+                 First Search</h1></div>
+              <a>
+                <div class="description">
+                  <p>Click on the checkboxes to select or deselect them:</p>
+                  
+                  <h2>Node 0</h2>
+                  <form>
+                    <label>
+                      <input type="checkbox" name="option1" value=1 id="01">
+                      Node 1
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option2" value=1 id="02">
+                      Node 2
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option3" value=1 id="03">
+                      Node 3
+                    </label><br>
+                  <label>
+                      <input type="checkbox" name="option4" value=1 id="04">
+                          Node 4
+                  </label><br>
+                  </form>
+
+                  <h2>Node 1</h2>
+                  <form>
+                    <label>
+                      <input type="checkbox" name="option5" value=1 id="10">
+                      Node 0
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option6" value=1 id="12">
+                      Node 2
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option7" value=1 id="13">
+                      Node 3
+                    </label><br>
+                  <label>
+                      <input type="checkbox" name="option8" value=1 id="14">
+                          Node 4
+                  </label><br>
+                  </form>
+
+                  <h2>Node 2</h2>
+                  <form>
+                    <label>
+                      <input type="checkbox" name="option9" value=1 id="20">
+                      Node 0
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option10" value=1 id="21">
+                      Node 1
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option11" value=1 id="23">
+                      Node 3
+                    </label><br>
+                  <label>
+                      <input type="checkbox" name="option12" value=1 id="24">
+                          Node 4
+                  </label><br>
+                  </form>
+
+                  <h2>Node 3</h2>
+                  <form>
+                    <label>
+                      <input type="checkbox" name="option13" value=1 id="30">
+                      Node 0
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option14" value=1 id="31">
+                      Node 1
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option15" value=1 id="32">
+                      Node 2
+                    </label><br>
+                  <label>
+                      <input type="checkbox" name="option16" value=1 id="34">
+                          Node 4
+                  </label><br>
+                  </form>
+
+                  <h2>Node 4</h2>
+                  <form>
+                    <label>
+                      <input type="checkbox" name="option17" value=1 id="40">
+                      Node 0
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option18" value=1 id="41">
+                      Node 1
+                    </label><br>
+                    <label>
+                      <input type="checkbox" name="option19" value=1 id="42">
+                      Node 2
+                    </label><br>
+                  <label>
+                      <input type="checkbox" name="option20" value=1 id="43">
+                          Node 3
+                  </label><br>
+                  </form>
+
+                  <button type="Button" onclick="showGraph()" class="button">Confirm graph</button>
+                  <button type="Button" onclick="BFS(getGraph(),0)" class="button">Run DFS</button>
+                </div>
+              </a>
+            </div>
+          </div>
+      </div>
     <script src="bfs.js"></script>
 </body>
 </html>
