@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../style_sort.css">
     <title>Bubble Sort</title>
 </head>
 <body>
-	<h1>Bubble Sort</h1>
-	<label for="input">Enter the Array Elements:</label>
-	<input type="text" min = "-1000" max="1000" id="input">
-	<button onclick="Add()">Add</button>
-	<button onclick="generateTable(arr)">Bubble Sort</button>
+	<div id="main">
+		<div id="container">
+			<div class="algo-container">
+				<div class="title">
+					<h1>Bubble Sort</h1>
+				</div>
+			</div>
+			<div class="algo-container">
+				<div class="description">
+					<label for="input"><p>Enter the Array Elements:</p></label>
+					<input type="text" min = "-1000" max="1000" id="input">
+				</div>
+				<button type="Button" onclick="Add()" class ="button">Add</button>
+				<button type="Button" onclick="generateTable(arr); this.onclick=null" class="button">Selection Sort</button>
+				<button type="Button" onclick="window.location.reload(true)" class="button">Reset</button>
+			</div>
+			<div class="algo-container">
+				<p id = "Display"> </p>
+			</div>
 
-	<p id = "Display">The given Array	: </p>
-
-	<script src = "input.js"></script>
-	<script src = "generateTable.js"></script>
-	<script src = "bubbleSort.js"></script>
+				<script src = "input.js"></script>
+				<script src = "generateTable.js"></script>
+				<script src = "bubbleSort.js"></script>
+			</div>
+		</div>
+	</div>
 </body>
 </html></html>

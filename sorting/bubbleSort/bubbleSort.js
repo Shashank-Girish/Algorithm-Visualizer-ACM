@@ -41,17 +41,17 @@ async function bubbleSort(ar)
             }
 
             var cell = tbl.rows[0].cells[j]; 
-            cell.setAttribute("bgcolor","white");
+            cell.setAttribute("bgcolor","");
 
             var cell = tbl.rows[0].cells[j+1]; 
-            cell.setAttribute("bgcolor","white");
+            cell.setAttribute("bgcolor","");
 
         }
 
         var cell = tbl.rows[0].cells[j]; 
-        cell.setAttribute("bgcolor","light-green");
+        cell.setAttribute("bgcolor","rgb(99,158,74)");
     }
     var cell = tbl.rows[0].cells[0]; 
-    cell.setAttribute("bgcolor","green");
+    cell.setAttribute("bgcolor","rgb(99,158,74)");
 
 }
