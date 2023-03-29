@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../sorting/style_sort.css">
     <title>Searching | Linear Search</title>
 </head>
 <body>
@@ -12,21 +12,29 @@
 		<div id="container">
 			<div class="algo-container">
 				<div class="title">
-					<h1>Selection Sort</h1>
+					<h1>Linear Search</h1>
 				</div>
+			</div>
+			<div class="algo-container">
 				<div class="description">
 					<label for="input"><p>Enter the Array Elements:</p></label>
 					<input type="text" min = "-1000" max="1000" id="input">
-				</div>	
+					<label for="src"><p>Enter the element to be searched:</p></label>
+					<input type="number" min = "-1000" max="1000" id="Search">
+				</div>
+				
 				<button type="Button" onclick="Add()" class ="button">Add</button>
-				<button type="Button" onclick="generateTable(arr)" class="button">Selection Sort</button>
+				<button type="Button" onclick="generateTable(arr,ele); this.onclick=null" class="button">Selection Sort</button>
+				<button type="Button" onclick="window.location.reload(true)" class="button">Reset</button>
+			</div>
 
-				<p id = "Display">The given Array	: </p>
+			<div class="algo-container">
+				<p id = "Display"></p>
+			</div>
 
 				<script src = "input.js"></script>
 				<script src = "generateTable.js"></script>
-				<script src = "selectionSort.js"></script>
-			</div>
+				<script src = "linearSearch.js"></script>
 		</div>
 	</div>
 </body>
