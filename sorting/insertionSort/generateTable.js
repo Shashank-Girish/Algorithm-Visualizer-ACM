@@ -2,8 +2,12 @@ function generateTable(arr){
 
     // console.log(arr);
 
+    var div = document.createElement("div");
+    div.setAttribute("class","algo-container");
+
     var tbl = document.createElement("table");
     var tblBody = document.createElement("tbody");
+    tbl.setAttribute("class","table");
 
     var row = document.createElement("tr");
 
@@ -18,6 +22,7 @@ function generateTable(arr){
         cell.setAttribute("width","100px");
         cell.setAttribute("text-align","centre");
         cell.setAttribute("vertical-align","middle");
+        cell.setAttribute("font-size","100px");
         row.appendChild(cell);
     }
 

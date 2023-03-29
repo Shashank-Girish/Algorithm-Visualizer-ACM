@@ -24,7 +24,7 @@ async function insertionSort(ar)
             await sleep(1250);
 
             var cel = tbl.rows[0].cells[j+1]; 
-            cel.setAttribute("bgcolor","white");
+            cel.setAttribute("bgcolor","");
 
             j = j - 1; 
         } 
@@ -39,9 +39,12 @@ async function insertionSort(ar)
         await sleep(2000);
 
         var cel = tbl.rows[0].cells[j+1]; 
-        cel.setAttribute("bgcolor","white");
+        cel.setAttribute("bgcolor","");
     }
 
-    var cel = tbl.rows[0].cells; 
-    cel.setAttribute("bgcolor","green");
+    for(let i = 0; i < ar.length; i++){
+        var cel = tbl.rows[0].cells[i]; 
+        cel.setAttribute("bgcolor","rgb(99,158,74)");
+    }
+    
 }
