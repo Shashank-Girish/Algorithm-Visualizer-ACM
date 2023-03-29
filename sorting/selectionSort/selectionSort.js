@@ -21,7 +21,7 @@ async function selectionSort(ar)
 
             await sleep(500);
 
-            cell.setAttribute("bgcolor","white");
+            cell.setAttribute("bgcolor","");
         
         }
         
@@ -33,7 +33,7 @@ async function selectionSort(ar)
         await sleep(1000);
 
         var cel = tbl.rows[0].cells[min_index]; 
-        cel.setAttribute("bgcolor","white");
+        cel.setAttribute("bgcolor","");
 
         temp=ar[min_index];
         ar[min_index]=ar[i];
@@ -45,11 +45,11 @@ async function selectionSort(ar)
         tbl.rows[0].cells[i].innerHTML = ar[i];
 
         var cel = tbl.rows[0].cells[i]; 
-        cel.setAttribute("bgcolor","green");
+        cel.setAttribute("bgcolor","rgb(99,158,74)");
 
         await sleep(2000);
         
     }
     var cel = tbl.rows[0].cells[i]; 
-    cel.setAttribute("bgcolor","green");
+    cel.setAttribute("bgcolor","rgb(99,158,74)");
 }

@@ -9,6 +9,7 @@ function Add(){
 
     const inputArray = document.getElementById("input").value;
     arr = inputArray.split(",").map(Number);
+    document.getElementById("Display").innerHTML+="The given Array :    "
     document.getElementById("Display").innerHTML+=arr;
     console.log(arr);
 }
