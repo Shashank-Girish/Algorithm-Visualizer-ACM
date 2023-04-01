@@ -73,7 +73,7 @@ body {
 }
 
 .algo-container {
-  width: 2000px;
+  width: 1000px;
   height: fit-content;
   padding: 1rem;
   margin: 20px;
@@ -87,7 +87,8 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   font-family: 'Poppins', sans-serif;
   backdrop-filter: blur(5px);
-  color: rgb(255, 72, 56);
+  color: rgb(255, 255, 255);
+  
 }
 
 /* .imageContainer:hover img{
@@ -149,6 +150,7 @@ body {
   display: inline-block;
   font-size: 16px;
   margin: 1px;
+  border-radius: 12px;
 }
 
 .table{
@@ -157,5 +159,5 @@ body {
   text-align: center;
   vertical-align:middle;
   font-size: 30px;
-  color: rgb(255, 72, 56);
+  color: #dcebff;
 }

@@ -16,16 +16,20 @@
 				</div>
 			</div>
 			<div class="algo-container">
+				<a>
 				<div class="description">
+					
 					<label for="input"><p>Enter the Array Elements:</p></label>
 					<input type="text" min = "-1000" max="1000" id="input">
 					<label for="src"><p>Enter the element to be searched:</p></label>
 					<input type="number" min = "-1000" max="1000" id="Search">
+					
 				</div>
 				
-				<button type="Button" onclick="Add()" class ="button">Add</button>
-				<button type="Button" onclick="generateTable(arr,ele); this.onclick=null" class="button">Selection Sort</button>
+				<button type="Button" onclick="Add(); this.onclick=null" class ="button">Add</button>
+				<button type="Button" onclick="generateTable(arr,ele); this.onclick=null" class="button">Search</button>
 				<button type="Button" onclick="window.location.reload(true)" class="button">Reset</button>
+				</a>
 			</div>
 
 			<div class="algo-container">
