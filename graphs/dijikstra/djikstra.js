@@ -4,6 +4,7 @@ function dijkstra(graph, start) {
   const visited = Array(graph.length).fill(false);
   for (let i = 0; i < graph.length - 1; i++) {
     generateTable(distances);
+    console.log(graph.length)
     const minDistance = Math.min(...distances.filter((dist, idx) => !visited[idx]));
     const minIndex = distances.findIndex((dist, idx) => dist === minDistance && !visited[idx]);
     visited[minIndex] = true;
@@ -20,7 +21,7 @@ function showGraph(){
   for(var i=0;i<5;i++){
     for(var j=0;j<5;j++){
       if(i!=j){
-        console.log(document.getElementById(`${i}${j}`).value);
+        //console.log(document.getElementById(`${i}${j}`).value);
         if(document.getElementById(`${i}${j}`).value!=0){
           document.getElementById(`arrow${i}${j}`).style.display='block';
         }
@@ -41,7 +42,7 @@ function getGraph(){
     for(var j=0;j<5;j++){
       if(i!=j){
         if(document.getElementById(`${i}${j}`).value!==0){
-          graph[i][j]=document.getElementById(`${i}${j}`).value;
+          graph[i][j]=Number(document.getElementById(`${i}${j}`).value);
         }
       }
     }
